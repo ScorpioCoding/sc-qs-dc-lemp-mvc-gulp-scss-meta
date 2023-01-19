@@ -33,8 +33,7 @@ class Home extends Controller
     $viewName = $viewPath . DS;
     $viewName .= strtolower($args['controller']);
 
-    $m = new Meta($args);
-    $meta = $m->getMeta();
+    $meta = (new Meta($args))->getMeta();
 
 
     /*
