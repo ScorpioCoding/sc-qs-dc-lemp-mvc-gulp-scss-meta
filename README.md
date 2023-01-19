@@ -28,3 +28,8 @@ ScorpioCoing QuickStart Docker Nginx Php stack
 - run command to start gulp  
   `gulp`
 - to stop enter keys `ctrl+c`
+
+## Favicons
+
+Favicons can be created by using the following
+[link](https://www.favicon-generator.org/)
