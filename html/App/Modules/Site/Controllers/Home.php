@@ -5,8 +5,6 @@ namespace App\Modules\Site\Controllers;
 use App\Core\Controller;
 use App\Core\View;
 
-use App\Modules\Site\Utils\Meta;
-
 
 /**
  *  Home
@@ -27,29 +25,18 @@ class Home extends Controller
     $viewPath = PATH_MODULES;
     $viewPath .= 'Site/Views';
 
-    $viewTemplatePath = PATH_MODULES;
-    $viewTemplatePath .= 'Site/Views/temp';
-
     $viewName = $viewPath . DS;
     $viewName .= strtolower($args['controller']);
-
-    $meta = (new Meta($args))->getMeta();
 
 
     /*
     * render the view
-    * @params int 		$renderOption  (1, 2, 3)
-    * @params string 	$path
-    * @params string 	$name
-    * @params array 	$data
+    * @params string 	$viewname
+    * @params array 	$meta
     * @params array 	$trans
-    *
-    * render options are
-    *   1 - no includes
-    *   2 - include header and footer
-    *   3 - include header, navigation and footer
+    * @params array 	$data
     */
-    View::render(2, $viewTemplatePath, $viewName, $meta, $trans, $data);
+    View::render($viewName, $meta, $trans, $data);
   }
 
   protected function after()
