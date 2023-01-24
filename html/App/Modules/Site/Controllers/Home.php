@@ -5,6 +5,8 @@ namespace App\Modules\Site\Controllers;
 use App\Core\Controller;
 use App\Core\View;
 
+use App\Modules\Site\Utils\Meta;
+
 
 /**
  *  Home
@@ -22,12 +24,7 @@ class Home extends Controller
     $trans = array();
     $data = array();
 
-    $viewPath = PATH_MODULES;
-    $viewPath .= 'Site/Views';
-
-    $viewName = $viewPath . DS;
-    $viewName .= strtolower($args['controller']);
-
+    $meta = (new Meta($args))->getMeta();
 
     /*
     * render the view
@@ -36,7 +33,7 @@ class Home extends Controller
     * @params array 	$trans
     * @params array 	$data
     */
-    View::render($viewName, $meta, $trans, $data);
+    View::render($args, $meta, $trans, $data);
   }
 
   protected function after()
