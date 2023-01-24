@@ -19,16 +19,20 @@ class Home extends Controller
 
   public function indexAction($args = array())
   {
-    //echo "here - home controller";
+    //MetaData
     $meta = array();
+    $meta = (new Meta($args))->getMeta();
+    // Translation
     $trans = array();
+
+    // Extra data
     $data = array();
 
-    $meta = (new Meta($args))->getMeta();
+
 
     /*
     * render the view
-    * @params string 	$viewname
+    * @params array 	$args
     * @params array 	$meta
     * @params array 	$trans
     * @params array 	$data
