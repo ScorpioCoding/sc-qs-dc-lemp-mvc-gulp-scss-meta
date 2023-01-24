@@ -3,7 +3,9 @@
 namespace App\Core;
 
 
-
+/** THE VIEW
+ * 
+ */
 class View
 {
   public function __construct()
