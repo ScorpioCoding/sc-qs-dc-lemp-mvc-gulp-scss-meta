@@ -30,8 +30,10 @@ class Home extends Controller
 
 
 
-   $args['template'] = 'Template';
-    View::render($args, $meta, $trans, $data);
+    $args['template'] = 'Template';
+    View::render($args, $meta, $trans, [
+      'data' => $data
+    ]);
   }
 
   protected function after()
